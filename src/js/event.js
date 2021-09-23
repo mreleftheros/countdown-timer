@@ -24,7 +24,7 @@ class Event {
     this.startTimer();
   }
   reset() {
-    this.setEventTime = null;
+    this.eventTime = null;
     clearInterval(this.timer);
     ui.updateTheme(this.events, null);
   }
