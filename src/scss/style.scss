@@ -2,7 +2,18 @@
 @import "mixins";
 
 .main.christmas {
-  background: 
+  background: url(./christmas.svg) no-repeat center;
+  background-size: contain;
+}
+
+.main.easter {
+  background: url(./easter.svg) no-repeat center;
+  background-size: contain;
+}
+
+.main.summer {
+  background: url(./summer.svg) no-repeat center;
+  background-size: contain;
 }
 
 .main {
