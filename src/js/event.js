@@ -13,8 +13,20 @@ class Event {
   }
   init(e) {
     this.setEvent(e);
+
+    if (!this.event) { // check
+      this.reset();
+      return;
+    }
+
     this.setEventTime();
+    ui.updateTheme(this.events, this.event);
     this.startTimer();
+  }
+  reset() {
+    this.setEventTime = null;
+    clearInterval(this.timer);
+    ui.updateTheme(this.events, null);
   }
   setEvent(e) {
     this.event = e.target.value;

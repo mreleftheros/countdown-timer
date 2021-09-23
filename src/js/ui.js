@@ -1,5 +1,6 @@
 class UI {
   constructor() {
+    this.main = document.getElementById("main");
     this.eventForm = document.getElementById("eventForm");
     this.timer = document.getElementById("timer");
   }
@@ -17,7 +18,20 @@ class UI {
     `;
 
     this.timer.innerHTML = html;
-  } 
+  }
+  updateTheme(events, event) {
+    events = events.map(event => event.name);
+
+    for (let event of events) {
+      this.main.classList.remove(event);
+    }
+
+    if (!event) {
+      this.timer.innerHTML = "";
+    }
+
+    this.main.classList.add(event);
+  }
 }
 
 const ui = new UI();
